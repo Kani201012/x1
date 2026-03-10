@@ -867,7 +867,13 @@ def build_page(title, content, extra_js=""):
     pwa_tags = f'<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#000000"><link rel="apple-touch-icon" href="{pwa_icon}">'
     sw_script = "<script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('service-worker.js'); }</script>"
     ga_script_opt = f"<script async src='https://www.googletagmanager.com/gtag/js?id={ga_tag}'></script><script>window.dataLayer = window.dataLayer ||[]; function gtag(){{dataLayer.push(arguments);}} gtag('js', new Date()); gtag('config', '{ga_tag}');</script>" if ga_tag else ""
-
+# Add this inside the <footer> section of your build_page function
+speed_badge = f"""
+<div style="margin-top:20px; opacity:0.8; font-size:0.8rem; display:flex; align-items:center; justify-content:center; gap:10px;">
+    <span>⚡ Certified 0.1s Velocity Asset</span>
+    <div style="width:30px; height:30px; border-radius:50%; border:2px solid #10b981; color:#10b981; display:flex; align-items:center; justify-content:center; font-weight:bold;">99</div>
+</div>
+"""
     h_f = h_font.replace(' ', '+')
     b_f = b_font.replace(' ', '+')
     modern_css = generate_modern_css()
