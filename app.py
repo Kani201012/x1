@@ -42,7 +42,7 @@ THEME_REGISTRY = {
     "21. Cyberpunk 2077": {"bg": "#fcee0a", "txt": "#000000", "card": "#000000", "p": "#00ffff", "s": "#ff003c", "nav": "#fcee0a", "shadow": "8px 8px 0px #00ffff", "radius": "0px", "border": "2px solid #000000"},
     "22. Monochromatic Black/White": {"bg": "#ffffff", "txt": "#000000", "card": "#ffffff", "p": "#000000", "s": "#000000", "nav": "#ffffff", "shadow": "4px 4px 0px #000000", "radius": "0px", "border": "2px solid #000000"},
     "23. Retro Synthwave": {"bg": "#2b213a", "txt": "#e0d6eb", "card": "#181425", "p": "#ff007f", "s": "#00f0ff", "nav": "rgba(43,33,58,0.9)", "shadow": "0 0 15px rgba(255,0,127,0.5)", "radius": "10px", "border": "1px solid #ff007f"},
-    "24. Gradient Mesh": {"bg": "linear-gradient(45deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%)", "txt": "#333333", "card": "rgba(255,255,255,0.6)", "p": "#f77062", "s": "#3f51b5", "nav": "rgba(255,255,255,0.4)", "shadow": "0 8px 32px rgba(0,0,0,0.1)", "radius": "30px", "border": "1px solid rgba(255,255,255,0.5)"},
+    "24. Gradient Mesh": {"bg": "linear-gradient(45deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%)", "txt": "#333", "card": "rgba(255,255,255,0.6)", "p": "#f77062", "s": "#3f51b5", "nav": "rgba(255,255,255,0.4)", "shadow": "0 8px 32px rgba(0,0,0,0.1)", "radius": "30px", "border": "1px solid rgba(255,255,255,0.5)"},
     "25. Midnight Ocean": {"bg": "#0f2027", "txt": "#d1d5db", "card": "#203a43", "p": "#2c5364", "s": "#38ef7d", "nav": "rgba(15,32,39,0.9)", "shadow": "0 15px 25px rgba(0,0,0,0.3)", "radius": "16px", "border": "1px solid #2c5364"}
 }
 
@@ -65,7 +65,7 @@ st.markdown("""
 # --- 3. SIDEBAR ---
 with st.sidebar:
     st.title("Titan Architect")
-    st.caption("v100.7 | Fully Operational Core")
+    st.caption("v100.8 | Syntax Error Fixed")
     st.divider()
     
     # --- AI GENERATOR ---
@@ -144,7 +144,7 @@ with st.sidebar:
         show_stats = st.checkbox("Trust Stats", value=True)
         show_features = st.checkbox("Feature Grid", value=True)
         show_pricing = st.checkbox("Pricing Table", value=True)
-        show_inventory = st.checkbox("Tour Packages", value=True) # Renamed to Tour Packages
+        show_inventory = st.checkbox("Tour Packages", value=True)
         show_blog = st.checkbox("Blog Engine", value=True)
         show_gallery = st.checkbox("About Section", value=True)
         show_testimonials = st.checkbox("Testimonials", value=True)
@@ -212,46 +212,46 @@ with tabs[1]:
     st.divider()
     st.subheader("Stats & Features")
     col_s1, col_s2, col_s3 = st.columns(3)
-    stat_1 = col_s1.text_input("Stat 1", "500+")
-    label_1 = col_s1.text_input("Label 1", "Happy Travelers")
-    stat_2 = col_s2.text_input("Stat 2", "50+")
-    label_2 = col_s2.text_input("Label 2", "Destinations")
+    stat_1 = col_s1.text_input("Stat 1", "0.1s")
+    label_1 = col_s1.text_input("Label 1", "Speed")
+    stat_2 = col_s2.text_input("Stat 2", "$0")
+    label_2 = col_s2.text_input("Label 2", "Fees")
     stat_3 = col_s3.text_input("Stat 3", "100%")
-    label_3 = col_s3.text_input("Label 3", "Good Vibez")
+    label_3 = col_s3.text_input("Label 3", "Ownership")
 
-    f_title = st.text_input("Features Title", "Our Experiences")
+    f_title = st.text_input("Features Title", "Value Pillars")
     feat_data_input = st.text_area("Features List", st.session_state.feat_data, height=150)
     
     st.subheader("About")
-    about_h_in = st.text_input("About Title", st.session_state.about_h)
+    about_h_in = st.text_input("About Title", key="about_h")
     about_img = st.text_input("About Image", "https://images.unsplash.com/photo-1543286386-713df548e9cc?q=80&w=1600")
-    about_short_in = st.text_area("Short Summary", st.session_state.about_short, height=100)
-    about_long = st.text_area("Full Content", "**The Trap**\nMost business owners...", height=200)
+    about_short_in = st.text_area("Short Summary", key="about_short", height=100)
+    about_long = st.text_area("Full Content", "The Digital Landlord Trap...", height=200)
 
 with tabs[2]:
     st.subheader("📣 Marketing Suite")
-    top_bar_enabled = st.checkbox("Enable Top Bar", True)
-    top_bar_text = st.text_input("Promo Text", "🔥 Booking Now Open for WRC Safari Rally! Secure your spot.")
-    top_bar_link = st.text_input("Promo Link", "#store")
+    top_bar_enabled = st.checkbox("Enable Top Bar")
+    top_bar_text = st.text_input("Promo Text", "🔥 50% OFF Launch Sale - Ends Soon!")
+    top_bar_link = st.text_input("Promo Link", "#pricing")
     
     st.divider()
-    popup_enabled = st.checkbox("Enable Popup", True)
+    popup_enabled = st.checkbox("Enable Popup")
     popup_delay = st.slider("Delay (seconds)", 1, 30, 5)
-    popup_title = st.text_input("Popup Headline", "Need a Weekend Plan?")
-    popup_text = st.text_input("Popup Body", "Message us on WhatsApp to get our latest group rates.")
-    popup_cta = st.text_input("Popup Button", "Chat with Us")
+    popup_title = st.text_input("Popup Headline", "Wait! Don't leave empty handed.")
+    popup_text = st.text_input("Popup Body", "Get our free pricing guide on WhatsApp.")
+    popup_cta = st.text_input("Popup Button", "Get it Now")
 
 with tabs[3]:
     st.subheader("💰 Pricing")
     col_p1, col_p2, col_p3 = st.columns(3)
-    titan_price = col_p1.text_input("Setup Price", "KES 3,500")
-    titan_mo = col_p1.text_input("Monthly Fee", "KES 15,000")
-    wix_name = col_p2.text_input("Competitor", "Standard Agencies")
-    wix_mo = col_p2.text_input("Comp. Monthly", "Boring Itineraries")
-    save_val = col_p3.text_input("Savings", "Unmatched Vibez")
+    titan_price = col_p1.text_input("Setup Price", "$199")
+    titan_mo = col_p1.text_input("Monthly Fee", "$0")
+    wix_name = col_p2.text_input("Competitor", "Wix")
+    wix_mo = col_p2.text_input("Comp. Monthly", "$29/mo")
+    save_val = col_p3.text_input("Savings", "$1,466")
 
 with tabs[4]:
-    st.subheader("🛒 Tour Packages")
+    st.subheader("🛒 Store & Payments")
     st.info("💡 **2050 AR Protocol:** In your Store CSV, make Column F (the 6th column) a link to a `.glb` 3D model to enable native Augmented Reality.")
     sheet_url = st.text_input("Store CSV", placeholder="https://docs.google.com/spreadsheets/d/e/.../pub?output=csv")
     custom_feat = st.text_input("Default Product Img", "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800")
@@ -262,19 +262,19 @@ with tabs[4]:
 with tabs[5]:
     st.subheader("📅 Booking Engine")
     booking_embed = st.text_area("Embed Code", height=150, value='<!-- Calendly inline widget begin -->\n<div class="calendly-inline-widget" data-url="https://calendly.com/titan-demo/30min" style="min-width:320px;height:630px;"></div>\n<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>\n<!-- Calendly inline widget end -->')
-    booking_title = st.text_input("Booking Title", "Plan Your Next Adventure")
-    booking_desc = st.text_input("Booking Subtext", "Choose a time to consult with our travel planners.")
+    booking_title = st.text_input("Booking Title", "Book an Appointment")
+    booking_desc = st.text_input("Booking Subtext", "Select a time slot.")
 
 with tabs[6]:
     st.subheader("📰 Blog")
     blog_sheet_url = st.text_input("Blog CSV", placeholder="https://docs.google.com/spreadsheets/d/e/.../pub?output=csv")
-    blog_hero_title = st.text_input("Blog Title", "The Travel Diary")
-    blog_hero_sub = st.text_input("Blog Subtext", "Tips and destination guides.")
+    blog_hero_title = st.text_input("Blog Title", "Latest Insights")
+    blog_hero_sub = st.text_input("Blog Subtext", "Thoughts on tech.")
 
 with tabs[7]:
     st.subheader("Legal")
-    testi_data = st.text_area("Testimonials", "Sarah K.|Ultimate vibez!")
-    faq_data = st.text_area("FAQ", "Do you offer customized packages? ? Yes we do.")
+    testi_data = st.text_area("Testimonials", "Rajesh Gupta | Titan stopped the bleeding.\nSarah Jenkins | Easy updates.", height=100)
+    faq_data = st.text_area("FAQ", "Do I pay $0? ? Yes.\nIs it secure? ? Yes.", height=100)
     priv_txt = st.text_area("Privacy", "We collect minimum data.", height=100)
     term_txt = st.text_area("Terms", "You own the code.", height=100)
 
@@ -332,7 +332,6 @@ def gen_schema():
     return f'<script type="application/ld+json">{json.dumps(schema)}</script>'
 
 def gen_pwa_manifest():
-    # Safely get properties using .get() to prevent KeyError
     current_theme = THEME_REGISTRY.get(theme_mode, THEME_REGISTRY.get("1. Stripe Cloud (Modern SaaS)", {}))
     bg_color = current_theme.get('bg', '#ffffff')
     if bg_color.startswith('linear'): bg_color = '#ffffff'
@@ -379,15 +378,12 @@ def gen_2050_scripts():
 
 
 def generate_modern_css():
-    # 1. Fetch the base colors from the registry Safely!
     t = THEME_REGISTRY.get(theme_mode, THEME_REGISTRY.get("1. Stripe Cloud (Modern SaaS)", {}))
     
-    # Safely extract variables with defaults to prevent KeyError
     glass_val = t.get('glass', t.get('nav', 'rgba(255,255,255,0.8)'))
     border_val = t.get('border', '1px solid rgba(128,128,128,0.1)')
     shadow_val = t.get('shadow', '0 4px 6px rgba(0,0,0,0.05)')
     
-    # 2. Define special effects (Gradient, Hover, Backdrop)
     gradient_text = ""
     if any(x in theme_mode for x in ["SaaS", "Dark", "Creative"]):
         gradient_text = f"background: linear-gradient(90deg, {t.get('p', p_color)}, {t.get('s', s_color)}); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"
@@ -402,12 +398,10 @@ def generate_modern_css():
     if hero_layout == "Left":
         h_align = "text-align: left; justify-content: flex-start; align-items: center;"
 
-    # Button Radius Override
     radius_val = f"{border_rad}px"
     if btn_style == "Sharp": radius_val = "0px"
     elif btn_style == "Pill": radius_val = "50px"
 
-    # 3. Return exact CSS
     return f"""
     :root {{
         --p: {t.get('p', p_color)}; --s: {cta_bg_color}; --bg: {t.get('bg', '#ffffff')}; 
@@ -452,17 +446,9 @@ def generate_modern_css():
     h2 {{ font-size: calc(var(--h1-size) * 0.7); }}
     h3 {{ font-size: 1.6rem; color: var(--txt-h); }}
 
-    p {{ 
-        margin-bottom: 2rem; 
-        opacity: 0.9;
-        font-weight: 400;
-        text-align: justify;
-        text-justify: inter-word;
-        hyphens: auto;
-        -webkit-hyphens: auto;
-    }}
+    p {{ margin-bottom: 2rem; opacity: 0.9; font-weight: 400; text-align: justify; hyphens: auto; -webkit-hyphens: auto; }}
     
-    /* 2026 ADVANCED HERO ENGINE */
+    /* HERO ENGINE */
     .hero {{ position: relative; min-height: 95vh; overflow: hidden; display: flex; {h_align} padding-top: 140px; }}
     .carousel-slide {{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1); z-index: 0; transform: scale(1.05); }}
     .carousel-slide.active {{ opacity: 1; transform: scale(1); }}
@@ -471,7 +457,7 @@ def generate_modern_css():
     .hero h1 {{ color: #ffffff !important; text-shadow: 0 10px 30px rgba(0,0,0,0.5); -webkit-text-fill-color: #fff; background: none; }}
     .hero p {{ color: rgba(255,255,255,0.9) !important; font-size: clamp(1.2rem, 2vw, 1.4rem); max-width: 800px; margin: 0 {'auto' if hero_layout == 'Center' else '0'} 2.5rem {'auto' if hero_layout == 'Center' else '0'}; font-weight: 400; }}
     
-    /* BENTO-STYLE GRID LAYOUTS */
+    /* GRIDS */
     .container {{ max-width: 1300px; margin: 0 auto; padding: 0 2rem; box-sizing: border-box; }}
     main section {{ padding: clamp(2rem, 8vw, 8rem) 0; position: relative; }}
     .section-head {{ text-align: center; margin-bottom: clamp(3rem, 5vw, 5rem); display:flex; flex-direction:column; align-items:center; }}
@@ -479,21 +465,8 @@ def generate_modern_css():
     .about-grid {{ display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }}
     .contact-grid {{ display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: stretch; }}
     
-    /* 2026 CARD PHYSICS & MICRO-INTERACTIONS */
-    .card {{ 
-        background: var(--card); 
-        border-radius: var(--radius); 
-        border: var(--border); 
-        box-shadow: var(--shadow);
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-        display: flex; 
-        flex-direction: column; 
-        overflow: hidden; 
-        position: relative;
-        color: var(--txt) !important;
-        {backdrop}
-    }}
-
+    /* CARDS */
+    .card {{ background: var(--card); border-radius: var(--radius); border: var(--border); box-shadow: var(--shadow); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: flex; flex-direction: column; overflow: hidden; position: relative; color: var(--txt) !important; {backdrop} }}
     .card::before {{ content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--p), var(--s)); opacity: 0; transition: 0.3s; z-index: 5; }}
     .card:hover {{ transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.2); }}
     .card:hover::before {{ opacity: 1; }}
@@ -504,24 +477,15 @@ def generate_modern_css():
     .prod-img {{ width: 100%; height: 260px; object-fit: cover; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }}
     .card:hover .prod-img {{ transform: scale(1.08); }}
     
-    /* ENTERPRISE BUTTON COMPONENTS */
-    .btn {{ 
-        display: inline-flex; align-items: center; justify-content: center;
-        padding: 1.2rem 2.5rem; border-radius: var(--radius); 
-        font-weight: 800; text-decoration: none; transition: all 0.3s ease; 
-        text-transform: uppercase; cursor: pointer; border: none; text-align: center;
-        font-size: 0.95rem; letter-spacing: 1.5px; position: relative; overflow: hidden;
-    }}
+    /* BUTTONS */
+    .btn {{ display: inline-flex; align-items: center; justify-content: center; padding: 1.2rem 2.5rem; border-radius: var(--radius); font-weight: 800; text-decoration: none; transition: all 0.3s ease; text-transform: uppercase; cursor: pointer; border: none; text-align: center; font-size: 0.95rem; letter-spacing: 1.5px; position: relative; overflow: hidden; }}
     .btn-primary {{ background: var(--p); color: #fff !important; }}
     .btn-accent {{ background: var(--s); color: var(--btn-txt) !important; box-shadow: 0 10px 25px -5px var(--s); }}
+    .btn-outline-light {{ background: transparent; border: 2px solid #fff; color: #fff !important; }}
     .btn:hover {{ {btn_hover} }}
     
-    /* NAVIGATION */
-    nav#main-navbar {{ 
-        position: fixed; top: 0; width: 100%; z-index: 2000; 
-        background: var(--glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-        border-bottom: 1px solid var(--border); padding: 1.2rem 0; transition: top 0.3s, background 0.3s; 
-    }}
+    /* NAV */
+    nav#main-navbar {{ position: fixed; top: 0; width: 100%; z-index: 2000; background: var(--glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 1.2rem 0; transition: top 0.3s, background 0.3s; }}
     .nav-flex {{ display: flex; justify-content: space-between; align-items: center; }}
     .nav-links {{ display: flex; align-items: center; gap: 2rem; }}
     .nav-links a {{ text-decoration: none; font-weight: 600; color: var(--txt-h); font-size: 0.95rem; transition: 0.2s; position: relative; }}
@@ -595,7 +559,7 @@ def generate_modern_css():
     }}
     
     @media (max-width: 480px) {{
-         p {{ text-align: left; hyphens: auto; }}
+        p {{ text-align: left; hyphens: auto; }}
         html, body {{ width: 100% !important; margin: 0 !important; padding: 0 !important; overflow-x: hidden !important; }}
         .container {{ width: 100% !important; max-width: 100% !important; padding: 0 24px !important; box-sizing: border-box !important; }}
         footer {{ padding: 4rem 0 10rem 0 !important; }}
@@ -612,7 +576,6 @@ def generate_modern_css():
     /* TOP BAR AND POPUP */
     #top-bar {{ position: fixed; top: 0; left: 0; width: 100%; background: var(--s); color: var(--btn-txt); text-align: center; padding: 8px; z-index: 2005; font-weight: 800; font-size: 0.85rem; height: 40px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 10px rgba(0,0,0,0.1); }}
     #top-bar a {{ color: var(--btn-txt) !important; text-decoration: underline; margin-left:10px; }}
-    #lead-popup {{ display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--card); padding: 3rem; text-align: center; border-radius: var(--radius); z-index: 2000; box-shadow: 0 25px 100px rgba(0,0,0,0.5); width: 90%; max-width: 450px; border: 1px solid var(--border); }}
     """
 
 def gen_nav():
@@ -659,6 +622,11 @@ def build_page(title, content, extra_js=""):
     h_f = h_font.replace(' ', '+')
     b_f = b_font.replace(' ', '+')
 
+    # EXPLICITLY EXTRACT COOKIE AND POPUP LOGIC TO AVOID F-STRING SLASH ERRORS
+    cookie_html = f"""<div id="cookie-banner" class="glass" style="position:fixed; bottom:0; left:0; width:100%; padding:1.5rem; transform:translateY(100%); transition:0.5s; z-index:9000; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border);"><div>{cookie_txt}</div><button class="btn btn-primary" onclick="acceptCookies()">Accept</button></div>""" if show_cookie else ""
+    
+    popup_html = f"""<div id="lead-popup" class="glass" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); padding:3rem; text-align:center; border-radius:24px; z-index:3000; box-shadow:0 30px 60px rgba(0,0,0,0.5); width:90%; max-width:450px;"><div style="position:absolute; top:15px; right:20px; cursor:pointer; font-size:1.5rem; opacity:0.5;" onclick="document.getElementById('lead-popup').style.display='none'">✕</div><h3 style="margin-bottom:1rem; color:var(--txt-h);">{popup_title}</h3><p style="margin-bottom:2rem; color:var(--txt);">{popup_text}</p><a href="https://wa.me/{wa_num}?text=I want the offer" class="btn btn-accent" target="_blank" style="width:100%;">{popup_cta}</a></div>""" if popup_enabled else ""
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -689,7 +657,7 @@ def build_page(title, content, extra_js=""):
         <!-- WIDGETS -->
         <div id="cart-overlay" onclick="toggleCart()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1999;"></div>
         <div id="cart-modal" class="glass" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); padding:2rem; z-index:2000; width:90%; max-width:400px; border-radius:24px;">
-            <h3 style="color:var(--txt-h); margin-bottom:1rem;">Your Cart</h3><hr style="margin:10px 0; opacity:0.2;">
+            <h3 style="color:var(--p); margin-bottom:1rem;">Your Cart</h3><hr style="margin:10px 0; opacity:0.2;">
             <div id="cart-items" style="max-height:200px; overflow-y:auto; margin:1rem 0;"></div>
             <div style="font-weight:bold; font-size:1.2rem; margin-bottom:1rem; text-align:right; color:var(--txt);">Total: <span id="cart-total">0.00</span></div>
             <div class="local-vault" style="background:rgba(128,128,128,0.05); padding:1rem; border-radius:12px; margin-bottom:1rem;">
@@ -704,8 +672,8 @@ def build_page(title, content, extra_js=""):
         <div class="float-btn" id="cart-float" onclick="toggleCart()" style="display:none;">🛒 <span id="cart-count" style="position:absolute; top:-5px; right:-5px; background:var(--s); color:white; border-radius:50%; width:20px; height:20px; font-size:12px; display:flex; align-items:center; justify-content:center;">0</span></div>
         
         {gen_lang_script()}
-        {f'<div id="cookie-banner" class="glass" style="position:fixed; bottom:0; left:0; width:100%; padding:1.5rem; transform:translateY(100%); transition:0.5s; z-index:9000; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border);"><div>{cookie_txt}</div><button class="btn btn-primary" onclick="acceptCookies()">Accept</button></div>' if show_cookie else ''}
-        {f'<div id="lead-popup" class="glass" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); padding:3rem; text-align:center; border-radius:24px; z-index:3000; box-shadow:0 30px 60px rgba(0,0,0,0.5); width:90%; max-width:450px;"><div style="position:absolute; top:15px; right:20px; cursor:pointer; font-size:1.5rem; opacity:0.5;" onclick="document.getElementById(\\'lead-popup\\').style.display=\\'none\\'">✕</div><h3 style="margin-bottom:1rem; color:var(--txt-h);">{popup_title}</h3><p style="margin-bottom:2rem; color:var(--txt);">{popup_text}</p><a href="https://wa.me/{wa_num}?text=I want the offer" class="btn btn-accent" target="_blank" style="width:100%;">{popup_cta}</a></div>' if popup_enabled else ''}
+        {cookie_html}
+        {popup_html}
         {extra_js}
     </main>
     {gen_csv_parser()}
@@ -746,14 +714,14 @@ def gen_blog_index_html():
     """
 
 def gen_product_page_content(is_demo=False):
-    demo_flag = "const isDemo = true;" if is_demo else "const isDemo = false;"
+    demo_flag = "true" if is_demo else "false"
     ar_script = '<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>' if enable_ar else ''
     return f"""
     {ar_script}
     <section style="padding-top:140px; background: var(--bg); min-height: 100vh;">
         <div class="container">
-            <a href="index.html#inventory" class="back-btn" style="color:var(--p); text-decoration:none; font-weight:700; display:inline-flex; align-items:center; gap:8px; margin-bottom:30px; transition:0.3s;">← BACK TO STORE</a>
-            <div id="product-detail-target">Loading Architecture Specifications...</div>
+            <a href="index.html#inventory" class="btn glass" style="color:var(--txt-h); padding:0.5rem 1rem; margin-bottom:2rem; font-size:0.8rem;">← BACK TO STORE</a>
+            <div id="product-detail-target">Loading Specifications...</div>
         </div>
     </section>
     <script defer>
@@ -807,21 +775,22 @@ def gen_product_page_content(is_demo=False):
 def gen_inner_header(title):
     return f"""<div class="modern-hero" style="min-height: 40vh; display:flex; align-items:center; justify-content:center; text-align:center; padding-top: 150px; padding-bottom: 50px;"><div class="container"><h1 style="color:#ffffff !important; margin:0; text-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: clamp(3rem, 6vw, 4.5rem);">{title}</h1></div></div>"""
 
-# --- 10. PRE-GENERATE HTML (FIXED ROUTING) ---
+# --- 10. PRE-GENERATE HTML & PREVIEW ASSEMBLY ---
 home_content = ""
 if show_hero: home_content += gen_hero()
 if show_stats: home_content += f'<div class="stats-ribbon-container container reveal"><div class="stats-ribbon"><div class="stat-block"><h3>{stat_1}</h3><p>{label_1}</p></div><div class="stat-divider"></div><div class="stat-block"><h3>{stat_2}</h3><p>{label_2}</p></div><div class="stat-divider"></div><div class="stat-block"><h3>{stat_3}</h3><p>{label_3}</p></div></div></div>'
 if show_features: home_content += gen_features()
 if show_pricing: home_content += gen_pricing_table()
 if show_inventory: home_content += gen_inventory()
-if show_gallery: home_content += f'<section id="about" style="background:var(--bg);"><div class="container about-grid"><div class="reveal"><img src="{about_img}" style="width:100%; border-radius:32px; box-shadow:var(--shadow);"></div><div class="reveal"><h2>{about_h_in}</h2><div style="margin-bottom:2rem; font-size:1.1rem; opacity:0.9;">{format_text(about_short_in)}</div><a href="about.html" class="btn btn-primary">Read Our Story</a></div></div></section>'
+if show_gallery: home_content += f'<section id="about" style="background:var(--bg); border-top:1px solid var(--border);"><div class="container about-grid"><div class="reveal"><img src="{about_img}" style="width:100%; border-radius:32px; box-shadow:var(--shadow);" alt="About Us"></div><div class="reveal"><h2 style="font-size:2.5rem; margin-bottom:1.5rem; color:var(--txt-h);">{about_h_in}</h2><div style="margin-bottom:2rem; font-size:1.1rem; opacity:0.9; line-height:1.8; color:var(--txt);">{format_text(about_short_in)}</div><a href="about.html" class="btn btn-primary">Read Our Story</a></div></div></section>'
 if show_testimonials: 
-    t_cards = "".join([f'<div class="card reveal" style="padding: 2rem;"><p style="font-size: 1.1rem; font-style: italic; line-height: 1.7; opacity: 0.9; flex-grow: 1; margin-bottom: 2rem;">"{x.split("|")[1].strip()}"</p><div style="display: flex; align-items: center; gap: 15px; border-top: 1px solid var(--border); padding-top: 1.5rem;"><div style="width: 45px; height: 45px; border-radius: 50%; background: var(--p); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">{x.split("|")[0].strip()[0]}</div><div><b style="color: var(--txt-h); font-size: 1.1rem; display: block;">{x.split("|")[0].strip()}</b><span style="font-size: 0.8rem; opacity: 0.6;">Verified Client</span></div></div></div>' for x in testi_data.split('\n') if "|" in x])
-    home_content += f'<section id="testimonials" style="background:rgba(128,128,128,0.02)"><div class="container"><div class="section-head reveal"><h2>Client Stories</h2><div style="width:60px; height:4px; background:var(--s); margin:1rem auto; border-radius:2px;"></div></div><div class="grid-3">{t_cards}</div></div></section>'
+    t_cards = "".join([f'<div class="card reveal" style="padding: 2rem;"><p style="font-size: 1.1rem; font-style: italic; line-height: 1.7; opacity: 0.9; flex-grow: 1; margin-bottom: 2rem; color:var(--txt); text-align:left;">"{x.split("|")[1].strip()}"</p><div style="display: flex; align-items: center; gap: 15px; border-top: 1px solid var(--border); padding-top: 1.5rem;"><div style="width: 45px; height: 45px; min-width: 45px; border-radius: 50%; background: var(--p); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; text-transform: uppercase;">{x.split("|")[0].strip()[0]}</div><div style="text-align:left;"><b style="color: var(--txt-h); font-size: 1.1rem; display: block;">{x.split("|")[0].strip()}</b><span style="display: block; font-size: 0.8rem; opacity: 0.6; margin-top: 2px; color:var(--txt);">Verified Client</span></div></div></div>' for x in testi_data.split('\n') if "|" in x and len(x.split("|")[0].strip()) > 0])
+    home_content += f'<section id="testimonials" style="background:var(--bg); border-top:1px solid var(--border);"><div class="container"><div class="section-head reveal" style="display:flex; flex-direction:column; align-items:center; text-align:center; margin-bottom:4rem;"><h2 style="margin-bottom:0.5rem; font-size:2.5rem;">Client Stories</h2><div style="width:60px; height:4px; background:var(--s); margin:1rem 0; border-radius:2px;"></div></div><div class="grid-3">{t_cards}</div></div></section>'
 if show_faq: 
-    items = "".join([f"<details class='reveal'><summary>{l.split('?')[0]}?</summary><p>{l.split('?')[1]}</p></details>" for l in faq_data.split('\n') if "?" in l and len(l.split('?'))>1])
-    home_content += f'<section id="faq" style="background:var(--bg);"><div class="container" style="max-width:800px;"><div class="section-head reveal"><h2>FAQ</h2><div style="width:60px; height:4px; background:var(--s); margin:1rem auto; border-radius:2px;"></div></div>{items}</div></section>'
-if show_cta: home_content += f'<section style="background:var(--s); color:white; text-align:center;"><div class="container reveal"><h2 style="color:var(--btn-txt) !important;">Ready to Launch?</h2><p style="margin-bottom:2rem; font-size:1.3rem; opacity:0.9; color:var(--btn-txt) !important;">Join the future of web architecture.</p><a href="contact.html" class="btn" style="background:var(--bg); color:var(--txt-h) !important;">Get Started</a></div></section>'
+    items = "".join([f"<details class='reveal' style='background:var(--card); border:1px solid var(--border); padding:1.5rem; border-radius:12px; margin-bottom:1rem; color:var(--txt);'><summary style='font-weight:800; font-size:1.1rem; cursor:pointer; color:var(--txt-h);'>{l.split('?')[0]}?</summary><p style='margin-top:1rem; opacity:0.9; line-height:1.6;'>{l.split('?')[1]}</p></details>" for l in faq_data.split('\n') if "?" in l and len(l.split('?'))>1])
+    home_content += f'<section id="faq" style="background:var(--bg);"><div class="container" style="max-width:800px;"><div class="section-head reveal" style="display:flex; flex-direction:column; align-items:center; text-align:center; margin-bottom:4rem;"><h2 style="margin-bottom:0.5rem; font-size:2.5rem;">FAQ</h2><div style="width:60px; height:4px; background:var(--s); margin:1rem 0; border-radius:2px;"></div></div>{items}</div></section>'
+if show_cta: 
+    home_content += f'<section style="background:var(--s); color:white; text-align:center;"><div class="container reveal"><h2 style="color:var(--btn-txt) !important; font-size:clamp(2.5rem, 5vw, 3.5rem); margin-bottom:1rem;">Ready to Launch?</h2><p style="margin-bottom:2rem; font-size:1.3rem; opacity:0.9; color:var(--btn-txt) !important;">Join the future of web architecture.</p><a href="contact.html" class="btn" style="background:var(--bg); color:var(--txt-h) !important;">Get Started</a></div></section>'
 
 contact_content = f"""
 {gen_inner_header("Contact Us")}
@@ -852,7 +821,18 @@ contact_content = f"""
 </section>
 """
 
+# HTML STRING ROUTING
 html_to_render = ""
+st.divider()
+st.subheader("🚀 2050 Launchpad")
+
+col_nav1, col_nav2 = st.columns([3, 1])
+with col_nav1:
+    preview_mode = st.radio("Preview Page:", ["Home", "About", "Contact", "Blog Index", "Blog Post (Demo)", "Privacy", "Terms", "Product Detail (Demo)", "Booking Page"], horizontal=True)
+with col_nav2:
+    device_mode = st.radio("Device View:", ["💻 Desktop", "📱 Mobile Phone"], horizontal=True)
+
+
 if preview_mode == "Home": html_to_render = build_page("Home", home_content)
 elif preview_mode == "About": html_to_render = build_page("About", f"{gen_inner_header('About')}<section style='background:var(--bg)'><div class='container'>{format_text(about_long)}</div></section>")
 elif preview_mode == "Contact": html_to_render = build_page("Contact", contact_content)
